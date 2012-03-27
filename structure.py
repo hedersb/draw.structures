@@ -48,8 +48,8 @@ class structure:
 			parameters = parameters[ i + 1: parameters.rfind( ")" ) ]
 			bar.parameter = float( parameters.strip( ) )
 			self.bars.append( bar )
-#			return bar.begin #return left side node
-			return bar.end   #return right side node
+			return bar.begin #return left side node
+#			return bar.end   #return right side node
 		elif function_name == "node" or function_name == "loadedNode":
 			node = [ 0.0, 0.0, 0.0 ]
 			i = 0
