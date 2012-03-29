@@ -87,7 +87,7 @@ class structure:
 						count -= 1
 					i += 1
 				bar.begin = self.fillDataBars( parameters[ : i ] )
-				print "BEGIN: " + str( bar.begin )
+#				print "BEGIN: " + str( bar.begin )
 				parameters = parameters[ i + 1: ]
 				i = 0
 				while not (parameters[ i ] == "," and count == 0):
@@ -97,19 +97,19 @@ class structure:
 						count -= 1
 					i += 1
 				bar.end = self.fillDataBars( parameters[ : i ] )
-				print "END: " + str( bar.end )
+#				print "END: " + str( bar.end )
 				parameters = parameters[ i + 1: ]
 				i_comma = parameters.rfind( "," )
 				bar.parameter = float( parameters[ : i_comma ].strip( ) )
-				print "PARAM: " + str( bar.parameter )
+#				print "PARAM: " + str( bar.parameter )
 				self.bars.append( bar )
 				parameters = parameters[ i_comma + 1: parameters.rfind( ")" ) ].lstrip( ).strip( )
 				returnNode = int( parameters )
 				if returnNode == 0:
-					print "RETURN: " + str( returnNode ) + " -- " + str( bar.begin )
+#					print "RETURN: " + str( returnNode ) + " -- " + str( bar.begin )
 					return bar.begin #return left side node
 				else:
-					print "RETURN: " + str( returnNode ) + " -- " + str( bar.end )
+#					print "RETURN: " + str( returnNode ) + " -- " + str( bar.end )
 					return bar.end   #return right side node
 			else:
 				print( "Unrecognized function: " + function_name )
