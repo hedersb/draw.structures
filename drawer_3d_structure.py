@@ -29,9 +29,9 @@ class drawer_3d_structure:
 			self.axes.scatter( xs, ys, zs, c='black', alpha=1 )
 		#draw bars
 		for bar in self.structure.bars:
-			xs = [ bar.begin[ 0 ], bar.end[ 0 ] ]
-			ys = [ bar.begin[ 1 ], bar.end[ 1 ] ]
-			zs = [ bar.begin[ 2 ], bar.end[ 2 ] ]
+			xs = [ self.structure.nodes[ bar.begin - 1 ][ 0 ], self.structure.nodes[ bar.end - 1 ][ 0 ] ]
+			ys = [ self.structure.nodes[ bar.begin - 1 ][ 1 ], self.structure.nodes[ bar.end - 1 ][ 1 ] ]
+			zs = [ self.structure.nodes[ bar.begin - 1 ][ 2 ], self.structure.nodes[ bar.end - 1 ][ 2 ] ]
 			line = Line3D( xs, ys, zs, linewidth = sqrt( bar.parameter ), color="black" )
 			self.axes.add_line( line )
 		
