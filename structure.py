@@ -21,7 +21,7 @@ class structure:
 			self.fillData( string_representation )
 		
 	def fillData( self, string_representation ):
-		string_representation.lstrip()
+		string_representation.lstrip() 
 		i_begin = string_representation.find("(")
 		function_name = string_representation[ : i_begin ].strip()
 		parameters = string_representation[ i_begin + 1 : ]
