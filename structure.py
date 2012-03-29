@@ -54,7 +54,15 @@ class structure:
 						i_cota = parameters.find( "," )
 					node[ i ] = float( parameters[ : i_cota ].strip( ) )
 #					print node
-					self.nodes.append( node )
+					# if there is an equal node then this one is not included
+					include = True
+					i = 0
+					while include and i < len( self.nodes ):
+						include = not ( self.nodes[ i ][ 0 ] == node[ 0 ] and self.nodes[ i ][ 1 ] == node[ 1 ] and self.nodes[ i ][ 2 ] == node[ 2 ] )
+						i += 1
+					#
+					if include:
+						self.nodes.append( node )
 				else:
 					print( "The function '" + function_name + "' is not recognized." )
 					return ""
@@ -102,7 +110,19 @@ class structure:
 				i_comma = parameters.rfind( "," )
 				bar.parameter = float( parameters[ : i_comma ].strip( ) )
 #				print "PARAM: " + str( bar.parameter )
-				self.bars.append( bar )
+				
+				#if there is an equal bar, it is used the lightest one
+				include = True
+				i = 0
+				while include and i < len( self.bars ):
+					include = not ( self.bars[ i ].begin == bar.begin and self.bars[ i ].end == bar.end )
+					i += 1
+				#
+				if include:
+					self.bars.append( bar )
+				elif bar.parameter < self.bars[ i-1 ].parameter:
+					self.bars[ i-1 ].parameter = bar.parameter
+					
 				parameters = parameters[ i_comma + 1: parameters.rfind( ")" ) ].lstrip( ).strip( )
 				returnNode = int( parameters )
 				if returnNode == 0:
