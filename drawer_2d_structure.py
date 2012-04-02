@@ -28,8 +28,8 @@ class drawer_2d_structure:
 			self.axes.scatter( xs, ys, c='black', alpha=1 )
 		#draw bars
 		for bar in self.structure.bars:
-			xs = [ self.structure.nodes[ bar.begin - 1 ][ 0 ], self.structure.nodes[ bar.end - 1 ][ 0 ] ]
-			ys = [ self.structure.nodes[ bar.begin - 1 ][ 1 ], self.structure.nodes[ bar.end - 1 ][ 1 ] ]
+			xs = [ self.structure.nodes[ bar.begin ][ 0 ], self.structure.nodes[ bar.end ][ 0 ] ]
+			ys = [ self.structure.nodes[ bar.begin ][ 1 ], self.structure.nodes[ bar.end ][ 1 ] ]
 			line = Line2D( xs, ys, linewidth = sqrt( bar.parameter ), color="black" )
 			self.axes.add_line( line )
 		
