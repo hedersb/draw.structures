@@ -14,10 +14,13 @@ class truss_bar:
 		
 
 class structure:
-	nodes = []
-	bars = []
-	numberOfRequiredNodes = 0
+	#nodes = []
+	#bars = []
+	#numberOfRequiredNodes = 0
 	def __init__(self, string_representation):
+		self.nodes = []
+		self.bars = []
+		self.numberOfRequiredNodes = 0;
 		if ( string_representation != "" ):
 			remaining = self.fillDataNodes( string_representation )
 			self.fillDataBars( remaining )

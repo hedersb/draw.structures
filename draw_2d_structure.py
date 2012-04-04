@@ -10,6 +10,9 @@ d2.save( "test2d.eps" )
 #d3.show( )
 #d3.save( "test3d.eps" )
 
+d2 = drawer_2d_structure( structure_str )
+d2.save( "test2d.eps" )
+
 #fig = plt.figure()
 #ax = fig.add_subplot(111, projection='3d')
 
