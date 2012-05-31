@@ -210,7 +210,7 @@ class structure:
 		#end-while-nodes
 		i = 0
 		while i < len( self.bars ):
-			if self.bars[ i ].begin == self.bars[ i ].end or self.bars[ i ].begin == -1 or self.bars[ i ].end == -1:
+			if self.bars[ i ].begin == self.bars[ i ].end or self.bars[ i ].begin == -1 or self.bars[ i ].end == -1 or self.bars[ i ].parameter == 0:
 				flagBar = -2
 			else:
 				flagBar = -1

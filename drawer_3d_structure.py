@@ -17,7 +17,7 @@ class drawer_3d_structure:
 		
 	def draw( self ):
 		self.figure = plt.figure( )
-		self.axes = self.figure.add_subplot( 111, projection='3d' )
+		self.axes = self.figure.add_subplot( 111, projection='3d', aspect='equal' )
 		self.axes.set_xlabel('x')
 		self.axes.set_ylabel('y')
 		self.axes.set_zlabel('z')

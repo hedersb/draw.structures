@@ -7,4 +7,5 @@
 #		video.avi
 
 
-ffmpeg -f image2 -i $1 -b 800k -r 29.97 $2
+#ffmpeg -f image2 -i $1 -b 800k -r 29.97 $2
+ffmpeg -r 2 -f image2 -i $1 -b 800k $2

@@ -18,7 +18,7 @@ class drawer_2d_structure:
 		
 	def draw( self ):
 		self.figure = plt.figure( )
-		self.axes = self.figure.add_subplot( 111 )
+		self.axes = self.figure.add_subplot( 111, aspect='equal' )
 		self.axes.set_xlabel('x')
 		self.axes.set_ylabel('y')
 		#draw nodes
